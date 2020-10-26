@@ -63,8 +63,9 @@ public class Main {
   @RequestMapping("/hello")
   String hello(Map<String, Object> model) {
     RelativisticModel.select();
-    Amount<Mass> m = Amount.valueOf("20 GeV").to(KILOGRAM);
-    model.put("science", "E=mc^2: 12 GeV = "+m.toString());
+    String mass = "30 GeV";
+    Amount<Mass> m = Amount.valueOf(mass).to(KILOGRAM);
+    model.put("science", "E=mc^2:"+ mass +" = "+m.toString());
     return "hello";
   }
 
